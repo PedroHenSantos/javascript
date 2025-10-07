@@ -11,13 +11,15 @@
     <input type="number" name="txtn2" id="txtn2"> tipo do calculo: 
     <input type="button" value="som" onclick="somar()">
     <input type="button" value="sub" onclick="subtrair()">
+    <input type="button" value="mul" onclick="multiplicar()">
+    <input type="button" value="div" onclick="dividir()">
     <div id="res">Resultado</div>
 
     <script>
+        var tn1 = window.document.getElementById('txtn1')
+        var tn2 = window.document.getElementById('txtn2')
+        //var s = window.document.querySelector('res')
         function somar() {
-            var tn1 = window.document.getElementById('txtn1')
-            var tn2 = window.document.getElementById('txtn2')
-            var s = window.document.querySelector('res')
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var s = n1 + n2
@@ -26,8 +28,30 @@
         }
 
         function subtrair() {
-        
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var su = n1 - n2
+
+            res.innerHTML = `A subtração de ${n1} e ${n2} é igual a ${su}`
         }
+
+        function multiplicar() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var mu = n1 * n2
+
+            res.innerHTML = `A multiplicação entre ${n1} e ${n2} é igual a ${mu}`
+        }
+
+        function dividir() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var di = n1 / n2
+
+            res.innerHTML = `A divisão entre ${n1} e ${n2} é igual a ${di}`
+        }
+
+        
     </script>
 </body>
 </html>
