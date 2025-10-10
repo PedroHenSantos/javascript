@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>União de inputs</title>
+    <style>
+        input{
+            padding: 2px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formação de frases com inputs</h1>
+    Digite seu nome: <input type="text" name="txtname" id="txtname"> <br>
+    Digite sua nacionalidade <input type="text" name="txtnaci" id="txtnaci"> <br>
+    Digite sua idade <input type="number" name="txtida" id="txtida"> <br>
+    <input type="button" value="juntar" onclick="juntar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function juntar() {
+            var nome = window.document.querySelector('input#txtname')
+            var nacio = window.document.querySelector('input#txtnaci')
+            var res = window.document.querySelector('div#res')
+            var idade = Number(txtida.value)
+            
+            res.innerHTML = (`<p>Seja bem vindo ${nome.value}, então você é ${nacio.value} e tem ${idade} anos!</p>`)
+        }
+    </script>
+</body>
+</html>
