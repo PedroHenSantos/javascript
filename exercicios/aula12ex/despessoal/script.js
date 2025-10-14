@@ -18,7 +18,7 @@ function verificar(){
             }else if (idade < 18){
                 img.setAttribute('src', 'foto-jovem-h.png')
             }else if (idade >= 18 && idade <= 55){
-                img.setAttribute('src', 'foto-adult-h')
+                img.setAttribute('src', 'foto-adulto-h.png')
             }else {
                 img.setAttribute('src', 'foto-idoso-h.png')
             }

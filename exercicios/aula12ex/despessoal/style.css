@@ -24,4 +24,9 @@ footer {
     color: white;
     text-align: center;
     font-style: italic;
-}   
+}
+
+#foto {
+    width: 200px;
+    height: 200px;
+}
