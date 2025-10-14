@@ -1,0 +1,40 @@
+function verificar(){
+    var data = new Date()
+    var ano = data.getFullYear()
+    var fano = document.getElementById('txtano')
+    var res = document.querySelector('div#res')
+    if (fano.value == 0 || fano.value > ano) {
+        window.alert(`[ERRO] - Preencha os campos corretamente!`)
+    }else {
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
+        var genero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (fsex[0].checked){
+            genero = 'Homem'
+            if (idade >= 0 && idade < 12){
+                img.setAttribute('src', 'foto-bebe-h.png')
+            }else if (idade < 18){
+                img.setAttribute('src', 'foto-jovem-h.png')
+            }else if (idade >= 18 && idade <= 55){
+                img.setAttribute('src', 'foto-adult-h')
+            }else {
+                img.setAttribute('src', 'foto-idoso-h.png')
+            }
+        }else {
+            genero = 'Mulher'
+            if (idade >=0 && idade <12){
+                img.setAttribute('src', 'foto-bebe-m.png')
+            }else if (idade < 18){
+                img.setAttribute('src', 'foto-jovem-m.png')
+            }else if (idade >=18 && idade < 56){
+                img.setAttribute('src', 'foto-adulto-m.png')
+            }else {
+                img.setAttribute('src','foto-idoso-m.png')
+            }
+        }
+        res.innerHTML = `Identificado ${genero} com idade ${idade} anos!`
+        res.appendChild(img)
+    }
+}
