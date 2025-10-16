@@ -3,10 +3,11 @@ function verificar(){
     var ano = data.getFullYear()
     var fano = document.getElementById('txtano')
     var res = document.querySelector('div#res')
-    if (fano.value == 0 || fano.value > ano) {
+    if (fano.value.lenght == 0 || Number(fano.value) > ano) {
         window.alert(`[ERRO] - Preencha os campos corretamente!`)
     }else {
-        var fsex = document.getElementsByName('radsex')
+        //var fsex = document.getElementsByName('radsex')
+        var fsex = document.querySelectorAll('[name="radsex"]')
         var idade = ano - Number(fano.value)
         var genero = ''
         var img = document.createElement('img')
